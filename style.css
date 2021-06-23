@@ -1,0 +1,167 @@
+/*RESETANTO A PAGINA*/
+* {
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+     text-decoration: none;
+     font-family: sans-serif;
+     font-size: 14px;
+ }
+
+ body {
+     width: 100%;
+     min-height: 100vh; /*Altura minima do body, ele pode aumentar*/
+     background-color: rgb(243, 243, 243);
+     margin: 0;
+     padding: 0;
+     display: flex; /*Quando usamos esse comando o container ou a tag html vira um flex container, ou seja, todos os itens que
+     estivem dentro dele vão ficar em linha ocupando todo o espaço da linha */
+     justify-content: center; /*Alinhando os itens ao centro do container*/
+}
+
+.instagram-wrapper {
+    display: flex; /*O display flex sempre é INLINE*/
+    align-items: center; /*O align-items é o alinhamento vertical dos itens dentro do container*/
+    justify-content: start; /*O justify-content é o alimento horizontal dos itens dentro do container*/ /*O valor Start indica 
+    que o items iram se alinhar em ordem de leitura ou seja da esquerda para o direita*/
+    width: 60%; /*Esses 60% de altura é em relação ao body*/
+    height: 100vh;
+}
+
+.instagram-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.instagram-phone img {
+    height: 50rem;
+}
+
+.instagram-conta {
+    display: flex;
+    align-items: center; /*horizontal*/
+    justify-content: space-around; /*Vertical*/
+    flex-direction: column; /*Esse flex-direction: column; alinha os itens em colunas, essa mudança impacta direto nos 
+    comados acima, transformando o justify-content: space-around; em vertical e o  align-items: center; em horizontal
+    isso acontece somenta quando fixamos a propriedade column*/
+    width: 50%;
+    min-height: 34rem;
+}
+
+.group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 1.3rem 0;
+    border: 1px solid lightgray;
+}
+
+.group:nth-child(1) { /*O comando .group:nth-child(1) pega os filhos do elementos, esse comando é um seletor de css*/
+    min-height: 19rem;
+}
+
+.instagram-logo {
+    height: 3rem;   
+}
+
+.profile-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /*Arrendondando a foto*/
+    overflow: hidden; /*Esse comando faz com que a imagem não exceda o limete da div*/
+}
+
+.profile-photo img {
+    height: 6rem;
+}
+
+.instagram-login {
+    background-color: #0095F6;
+    color:#ffffff;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.instagram-logout {
+    color: #0095F6;
+    margin-top: 1rem;
+}
+
+.not-account {
+    color: rgb(160, 160, 160);
+}
+
+.link-blue {
+    color: #0095F6;
+}
+
+.get-the-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1.3rem 0;
+}
+
+.download {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly; /*Deixa o mesmo espaçamento dos lados quanto no meio entre os items do container*/
+    align-items: center;
+    padding: 1rem;
+}
+
+.app-download {
+    height: 3rem;
+    width:  10rem;
+    background-size: cover;
+}   
+
+.app-download:nth-child(1) {
+    background-image: url("img/apple-button.png") ;
+}
+
+.app-download:nth-child(2) {
+    background-image: url("img/googleplay-button.png") ;
+}
+ 
+/*Até o momento o site não esta responsivo, a partir de agora começaremos a configurar a reponsividade*/
+
+/*Com uma tela de até 1024px*/
+@media (max-width:1024px){
+    .instagram-wrapper{
+        width: 90%;
+        
+    }
+
+}
+
+/*Telas com até 650PX*/
+@media (max-width:650px){
+    body{
+        background-color: #ffffff;
+    }
+
+    .instagram-wrapper{
+        width: 90%;
+    }
+
+    .instagram-phone {
+        display: none; /*A foto do celular some*/
+    }
+
+    .instagram-conta {
+        width: 100%;
+    }
+
+    .group {
+        border: 1px solid transparent;
+    }
+}
